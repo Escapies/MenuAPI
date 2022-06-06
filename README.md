@@ -1,5 +1,5 @@
 # MenuAPI
-A very simple and lightweight Menu library made for Spigot API with features like 
+A very simple and lightweight Menu library made for Spigot API with features like interactive menu buttons!
 
 # Implementation
 To implement this library, you can either clone this repository using ``mvn clone https://github.com/Escapies/MenuAPI`` and put it in your project source code, or follow these commands and steps:
