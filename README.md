@@ -1,8 +1,28 @@
 # MenuAPI
 A very simple and lightweight Menu library made for Spigot API with features like 
 
+# Implementation
+To implement this library, you can either clone this repository using ``mvn clone https://github.com/Escapies/MenuAPI`` and put it in your project source code, or follow these commands and steps:
+
+### Step 1
+``mvn clone https://github.com/Escapies/MenuAPI``
+### Step 2
+``mvn clean install``
+### Step 3
+Go into your ``pom.xml`` and add this:
+```xml
+    <dependencies>
+        <dependency>
+            <groupId>io.github.escapies.menuapi</groupId>
+            <artifactId>MenuAPI</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+```
+
 # Usage
-## Implementing the library
+## Registering the menu handler
 You must initialize the ``MenuHandler`` class, usually inside your main class.
 
 ## Example
