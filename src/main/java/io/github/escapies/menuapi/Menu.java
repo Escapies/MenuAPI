@@ -12,11 +12,22 @@ import java.util.Map;
 
 public abstract class Menu {
 
-    public abstract int getSize(final Player player);
+    private final int size;
+    private final String title;
+    private final boolean isFill;
 
-    public abstract String getTitle(final Player player);
+    /**
+     * Creates a new menu with the given size and title.
+     * @param title The title of the menu.
+     * @param size The size of the menu. (Must be a multiple of 9)
+     * @param isFill Whether the menu is filled a filler block or not.
+     */
+    public Menu(String title, int size, boolean isFill) {
+        this.title = title;
+        this.size = size;
+        this.isFill = shouldFill;
 
-    public abstract boolean isFill(final Player player);
+    }
 
     public abstract HashMap<Integer, Button> getButtons(final Player player);
 
@@ -26,11 +37,11 @@ public abstract class Menu {
             return;
         }
 
-        Inventory inventory = Bukkit.createInventory(null, getSize(player),
-                ChatColor.translateAlternateColorCodes('&', getTitle(player)));
+        Inventory inventory = Bukkit.createInventory(null, this.size,
+                ChatColor.translateAlternateColorCodes('&', this.title));
 
-        if (isFill(player)) {
-            for (int i = 0; i < getSize(player); i++) {
+        if (isFill) {
+            for (int i = 0; i < this.size; i++) {
                 inventory.setItem(i, ItemBuilder.of(Material.GRAY_STAINED_GLASS_PANE, 1).name("").build());
             }
         }
